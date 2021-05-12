@@ -1,0 +1,22 @@
+Table Contents :
+1. Item_registry
+    item_code - text, primary key
+    Item_name - text
+2. purchase_log
+    purchase_id - int, auto increment, primary key
+    item_code - text, foreign key
+    Qty - int
+    Amount - numeric
+
+
+1. Insert a new item in the registry table
+    - INSERT INTO Item_registry (item_code, Item_name) VALUES ("AP001","Amul Paneer");
+
+2. Insert a new purchase in the purchase table
+    - INSERT INTO purchase_log (purchase_id, item_code, Qty, Amount) VALUES (1,"AP001", 2, 100);
+
+3. Update item name of an existing item in the registry table
+    - UPDATE Item_registry SET (Item_name="Amul Butter") WHERE item_code="AP001"
+
+4. Select purchase_id, item_name, qty & total_cost for each item code. (Total cost = qty*amount)
+    - SELECT purchase_id, item_code, Qty, Qty*Amount AS total_cost FROM purchase_log;
